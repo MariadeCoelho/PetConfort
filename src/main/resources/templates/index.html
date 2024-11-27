@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <script th:src="@{/js/scripts.js}" defer></script>
+</head>
+<body>
+
+    <!-- Navbar Fixa no topo -->
+    <div class="navbar">
+        <span class="logo">PetConfort</span>
+    </div>
+
+    <h1>Seja bem-vindo!</h1>
+
+    <!-- Botões para navegação -->
+    <div class="buttons-container">
+        <a th:href="@{/cadastroProduto}" class="button">Cadastro de Produto</a>
+        <a th:href="@{/cadastroAnimal}" class="button">Cadastro de Animal</a>
+        <a th:href="@{/produto/listar}" class="button">Lista de Produtos</a> <!-- Atualizado para /produto/listar -->
+        <a th:href="@{/animal/listar}" class="button">Lista de Animal</a> <!-- Botão para lista de vendas -->
+    </div>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+        <div class="copyright">Todos os Direitos Reservados - PetConfort</div>
+    </footer>
+
+</body>
+</html>

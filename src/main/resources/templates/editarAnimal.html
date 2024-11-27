@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar Animal</title>
+        <link rel="stylesheet" th:href="@{/styles.css}">
+        <script th:src="@{/js/scripts.js}" defer></script>
+    </head>
+    <body>
+        <!-- Navbar Fixa no topo -->
+        <div class="navbar">
+            <span class="logo">PetConfort</span>
+        </div>
+        <div class="container">
+            <h1>Editar Animal</h1>
+
+            <!-- Formulário para editar as informações do animal -->
+            <form th:action="@{/animal/atualizar}" method="post">
+                <!-- Campo oculto para enviar o ID do animal -->
+                <input type="hidden" th:value="${animal.id}" name="id"/>
+
+                <div>
+                    <label for="nomePet">Nome do Pet:</label>
+                    <input type="text" id="nomePet" name="nomePet" th:value="${animal.nomePet}" required/>
+                </div>
+                <br>
+
+                <div>
+                    <label for="idadePet">Idade:</label>
+                    <input type="number" id="idadePet" name="idadePet" th:value="${animal.idadePet}" required/>
+                </div>
+                <br>
+
+                <div>
+                    <label for="racaPet">Raça:</label>
+                    <input type="text" id="racaPet" name="racaPet" th:value="${animal.racaPet}" required/>
+                </div>
+                <br>
+
+                <div>
+                    <label for="especiePet">Espécie:</label>
+                    <input type="text" id="especiePet" name="especiePet" th:value="${animal.especiePet}" required/>
+                </div>
+                <br>
+
+                <div>
+                    <label for="nomeTutor">Nome do Tutor:</label>
+                    <input type="text" id="nomeTutor" name="nomeTutor" th:value="${animal.nomeTutor}" required/>
+                </div>
+                <br>
+¨
+                <button type="submit">Salvar Alterações</button>
+            </form>
+
+            <br>
+
+            <!-- Botão para voltar à lista de animais -->
+            <button onclick="window.location.href = '/animal/listar'">Voltar para a Lista</button>
+        </div>
+        <!-- Botão de retorno para a página inicial -->
+        <div class="center">
+            <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+        </div>
+        <!-- Rodapé -->
+        <footer>
+            <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+            <div class="copyright">Todos os Direitos Reservados - PetConfort</div>
+        </footer>
+    </body>
+</html>

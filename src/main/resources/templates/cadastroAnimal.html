@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Animais</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <script src="/js/scripts.js"></script>
+</head>
+<body>
+
+    <!-- Navbar fixa no topo -->
+    <div class="navbar">
+        <span class="logo">PetConfort</span>
+        <ul>
+            <li><a th:href="@{/}">Página Inicial</a></li>
+            <li><a th:href="@{/animal/listar}">Listar Animais</a></li>
+        </ul>
+    </div>
+  
+    <h1>Cadastro de Animais</h1>
+    <div class="container">
+      
+        <form th:action="@{/animal/salvar}" method="post" onsubmit="return validarFormularioAnimal()">
+            <label for="nomePet">Nome do Pet:</label>
+            <input type="text" id="nomePet" name="nomePet" placeholder="Digite o nome do pet" required>
+            <br>
+
+            <label for="idadePet">Idade:</label>
+            <input type="number" id="idadePet" name="idadePet" placeholder="Digite a idade do pet (em anos)" required>
+            <br>
+
+            <label for="racaPet">Raça:</label>
+            <input type="text" id="racaPet" name="racaPet" placeholder="Digite a raça do pet" required>
+            <br>
+
+            <label for="especiePet">Espécie:</label>
+            <input type="text" id="especiePet" name="especiePet" placeholder="Digite a espécie do pet" required>
+            <br>
+            <label for="nomeTutor">Nome do Tutor:</label>
+            <input type="text" id="nomeTutor" name="nomeTutor" placeholder="Digite o nome do tutor" required>
+            <br>
+
+            <button type="submit">Registrar Animal</button>
+        </form>
+    </div>
+
+    <!-- Botão de retorno -->
+    <div class="center">
+        <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+        <div class="copyright">Todos os Direitos Reservados - PetConfort</div>
+    </footer>
+
+</body>
+</html>

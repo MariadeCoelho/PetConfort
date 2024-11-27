@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Animais</title>
+        <link rel="stylesheet" th:href="@{/styles.css}">
+           <script th:src="@{/js/scripts.js}" defer></script>
+    </head>
+    <body>
+
+        <!-- Navbar Fixa no topo -->
+        <div class="navbar">
+            <span class="logo">PetConfort</span>
+            <ul>
+                <li><a th:href="@{/}">Página Inicial</a></li>
+                <li><a th:href="@{/cadastroProduto}">Cadastro de Produto</a></li>
+                <li><a th:href="@{/cadastroAnimal}">Cadastro de Animais</a></li>
+            </ul>
+        </div>
+
+        <h1>Lista de Animais</h1>
+
+        <!-- Tabela para listar os animais -->
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Nome do Pet</th>
+                    <th>Idade</th>
+                    <th>Raça</th>
+                    <th>Espécie</th>
+                    <th>Nome do Tutor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr<tr th:each="animal : ${animais}">
+            <td th:text="${animal.nomePet}"></td>
+            <td th:text="${animal.idadePet}"></td>
+            <td th:text="${animal.racaPet}"></td>
+            <td th:text="${animal.especiePet}"></td>
+            <td th:text="${animal.nomeTutor}"></td>
+            <td>               
+                <!-- Botão Editar -->
+            <a th:href="@{/animal/editar-animal/{id}(id=${animal.id})}">Editar</a>
+
+               <!-- Botão Deletar -->
+            <a th:href="@{/animal/deletarAnimal/{id}(id=${animal.id})}" 
+   onclick="return confirm('Tem certeza que deseja excluir?')">Deletar</a>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <!-- Botão de retorno para a página inicial -->
+        <div class="center">
+            <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+            <div class="copyright">Todos os Direitos Reservados - PetConfort</div>
+        </footer>
+
+    </body>
+</html>

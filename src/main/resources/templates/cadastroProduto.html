@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <script src="/js/scripts.js"></script>
+</head>
+<body>
+
+    <!-- Navbar Fixa no topo -->
+    <div class="navbar">
+        <span class="logo">PetConfort</span>
+        <ul>
+            <li><a th:href="@{/}">Página Inicial</a></li>
+            <li><a th:href="@{/produto/listar}">Listar Produtos</a></li> <
+        </ul>
+    </div>
+   
+
+    <h1>Cadastro de Produto</h1>
+    <form th:action="@{/produto/salvar}" method="post" onsubmit="return validarFormularioProduto()">
+        <label for="nomeProduto">Nome do Produto:</label>
+        <input type="text" id="nomeProduto" name="nome" required>
+        <br>
+
+        <label for="dataEntrada">Data de Entrada:</label>
+        <input type="date" id="dataEntrada" name="dataEntrada" required>
+        <br>
+
+        <label for="tipoProduto">Tipo de Produto:</label>
+        <input type="text" id="tipoProduto" name="tipo" required>
+        <br>
+
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+
+    <!-- Botão de retorno para a página inicial -->
+    <div class="center">
+        <button onclick="window.location.href = '/'">Voltar para a Página Inicial</button>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="contact">Telefone: (XX) XXXX-XXXX</div>
+        <div class="copyright">Todos os Direitos Reservados - Bray Solutions</div>
+    </footer>
+
+</body>
+</html>
